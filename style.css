@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Sonsie+One&display=swap');
+
+html {
+height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  text-align: center;
+  background-color: #003448;
+  background-image: url('images/stage.png');
+  background-size: 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #F3DC6E;
+}
+
+h1 {
+  margin: 40px auto 0 auto;
+  font-family: 'Sonsie One', cursive;
+  font-weight: 400;
+  font-size: 48px;
+}
+
+p {
+  margin: 20px auto 0 auto;
+  padding: 5px 20px;
+  width:fit-content;
+  border: 1px solid #F3DC6E;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.drumset {
+  margin: 40px auto 0 auto;
+  width: 500px;
+  height: 360px;
+  position: relative;
+}
+
+.drumset-part {
+  cursor: crosshair;
+  position: absolute;
+  bottom: 0;
+}
+
+.drumset-part:active {
+  filter: sepia(1);
+}
+
+#kick {
+  width: 200px;
+  left: 160px;
+}
+
+#crash {
+  width: 145px;
+  bottom: 10px;
+  left: 0;
+}
+
+#tom {
+  width: 125px;
+  left: 60px;
+}
+
+#snare {
+  width: 110px;
+  left: 340px;
+}
+
+#hihat {
+  width: 110px;
+  left: 390px;
+}
+
+#tomleft {
+  width: 90px;
+  bottom: 180px;
+  left: 160px;
+}
+
+#tomright {
+  width: 90px;
+  bottom: 185px;
+  left: 280px;
+}
+
+.keyboard {
+  margin: 20px auto;
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.keyboard > p {
+  box-sizing: border-box;
+  width: 80px;
+  height: 80px;
+  padding-top: 30px;
+  margin: 10px;
+  background-color: #34495e;
+  border-radius: 15px;
+  box-shadow: 2px 2px 3px 1px #333;
+}
+
+.keyboard > p.active {
+  box-shadow: inset 0px 0px 15px 2px #F3DC6E;
+}

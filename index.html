@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Lynn Schirmer for CFA 2022">
+  <title>Rock on!</title>
+  <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body>
+
+  <h1>Rock on!</h1>
+  <!--Exercise 1
+  Use an event attribute to show the game instructions
+  1. In the p tag, insert an onmouseover attribute to call the function named instructions
+  2. Change the onmouseover attribute to onclick and test it
+  3. Remove the onclick attribute and go on to step 2
+  -->
+  <p>How to play</p>
+  <div class="drumset">
+    <img class='drumset-part' id='hihat' src='images/hihat.png'>
+    <img class='drumset-part' id='snare' src='images/snare.png'>
+
+    <img class='drumset-part' id='kick' src='images/kick.png'>
+    <img class='drumset-part' id='crash' src='images/crash.png'>
+    <img class='drumset-part' id='tom' src='images/tom.png'>
+
+    <img class='drumset-part' id='tomleft' src='images/tomleft.png'>
+    <img class='drumset-part' id='tomright' src='images/tomright.png'>
+  </div>
+
+  <audio id="kick-audio" src="drums/kick.mp3" preload></audio>
+  <audio id="crash-audio" src="drums/crash.mp3" preload></audio>
+  <audio id="tom-audio" src="drums/tom.mp3" preload></audio>
+  <audio id="hihat-audio" src="drums/hihat.mp3" preload></audio>
+  <audio id="snare-audio" src="drums/snare.mp3" preload></audio>
+  <audio id="tomleft-audio" src="drums/tomleft.mp3" preload></audio>
+  <audio id="tomright-audio" src="drums/tomright.mp3" preload></audio>
+
+  <div class="keyboard">
+  </div>
+  <script>
+    /* Exercise 2
+    1. Comment out function instructions()
+    2. Use the querySelector() method to select the p tag and assign it a variable.
+    3. Set the ptag object's onclick event handler property to an anon function that shows an alert with the instructions. 
+    */
+
+   
+
+    function instructions() {
+      alert("Hover over a drum picture to play its sound. Type one of the keys on your keyboard to add guitar sounds");
+    }
+
+    /* Exercise 3 
+    Selecting elements we need from the DOM and assigning them a global variable:
+    1. Use the querySelectorAll() method to select the .drumset-part img tags and assign them a variable.
+    2. Use the forEach() method to loop through each drumset part and add an event listener for 'mouseover', have it call the playDrums function 
+    */
+    
+
+
+
+    /* Exercise 4
+    1. Create a function called playDrums with one parameter - event
+    2. Log the event parameter in the console, explore the properties you see there.
+    3. Use the currentTarget property to get the drum pics's id and assing it a variable
+    4. Use querySelector or getElementById to get the cooresponding audio tag for the drum
+    5. Set the audio's currentTime to 0
+    6. Play the audio using play() method
+    */
+
+    
+
+
+
+    /* ============================= Events lesson Part 2: Making the keyboard guitar sounds =========================== */
+    const body = document.querySelector('body');
+    const keyboard = document.querySelector('.keyboard');
+
+    const guitarKeys = {
+      'q': '086228_cuerda-desafina-49805.mp3',
+      'w': 'out-on-a-bender-13586.mp3',
+      'e': 'guitar-tapping-87423.mp3',
+      'r': 'gtr_elecriff2-107925.mp3',
+      't': 'bass-g1-93233.mp3',
+      'y': 'bass-b1-93230.mp3',
+      'a': 'spanish-lick-ii-acoustic-ab-split-stereo-pair-oktava-108241.mp3',
+      's': 'suspense-queue-14808.mp3',
+      'd': 'wa-dealio-38183.mp3',
+    }
+    const keys = Object.keys(guitarKeys);
+
+    keys.forEach(function (key) {
+      //console.log(key);
+      keyboard.innerHTML += `<p id="${key}">${key}</p><audio id="${key}-audio" src="guitars/${guitarKeys[key]}"></audio>`;
+    });
+
+    /* Exercise 6
+    1. Use the addEventListener() method to listen for the 'keydown' event on body
+    2. Have it call a function called playGuitar
+    */
+
+   
+
+
+
+    /* Exercise 7
+    1. Create a function called playGuitar with one parameter for event data
+    2. Use the key property to get the key that was pressed and store it in variable
+    Code hint: eventparam.key
+    3. Create a conditional statement to check if the pressed key is included in the kays array
+    hint: use includes()
+    4. Inside the if statement, get the audio tag using the key pressed variable
+    5. Set currentTime to 0
+    6. Play the audio
+    */
+
+
+
+
+    /* Bonus
+    Show the pressed key style while the guitar sound is playing
+    1. Inside the if statement in function playGuitar, get the p tag corresponding to the key that was pressed.
+    2. Use the setAttribute() method to give it class 'active'.
+    3. Set the onended event property on the audio and set its value to an anon function that removes the active class from the p tag using the removeAttribute() method.
+    */
+
+  </script>
+</body>
+
+</html>
